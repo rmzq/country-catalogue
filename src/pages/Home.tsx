@@ -18,7 +18,14 @@ const Home = () => {
   return (
     <div className="grid grid-cols-3 gap-4">
       {countries.map((item) => {
-        return <Card key={item.cca2} name={item.name.common} />;
+        return (
+          <Card
+            key={item.ccn3}
+            name={item.name.common}
+            ccn3={item.ccn3}
+            flag={item.flag}
+          />
+        );
       })}
     </div>
   );
