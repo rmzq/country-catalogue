@@ -1,14 +1,7 @@
 import { Spinner } from "@material-tailwind/react";
 import axios from "axios";
-import { FunctionComponent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
-// type DetailProps = {
-//   name: string;
-//   officialName: string;
-//   region: string;
-//   flag: string;
-// };
 
 const Detail = () => {
   const { ccn3 } = useParams();
@@ -28,7 +21,7 @@ const Detail = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  });
 
   const handleHome = (e: any) => {
     e.preventDefault();
@@ -38,23 +31,23 @@ const Detail = () => {
   return (
     <div>
       {loading ? (
-        <div className="grid place-content-center content-center h-max">
-          <Spinner className="h-12 w-12" color="blue" />
+        <div className="grid place-content-center content-center">
+          <Spinner className="h-12 w-12" color="red" />
         </div>
       ) : (
         <div>
-          <div className="">
+          <div className="grid place-content-center">
             <img
               src={country.flags?.png}
               alt="country-flag"
               className="max-w-80 max-h-48"
             />
           </div>
-          <div className="grid grid-cols-3 max-w-2xl">
+          <div className="grid grid-cols-3 gap-2 max-w-2xl mt-2">
             {/* <h1>this is detail {ccn3}</h1> */}
-            <span>Nama</span>
-            <span>:</span>
-            <span>{country.name?.common}</span>
+            <div className="w-4">Nama</div>
+            <div className="w-2">:</div>
+            <div>{country.name?.common}</div>
           </div>
           <div className="mt-6">
             <span
