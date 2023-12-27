@@ -16,18 +16,21 @@ const Home = () => {
       });
   }, []);
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {countries.map((item) => {
-        return (
-          <Card
-            key={item.ccn3}
-            name={item.name.common}
-            ccn3={item.ccn3}
-            flag={item.flag}
-          />
-        );
-      })}
-    </div>
+    <>
+      <h1 className="text-5xl mb-2">Country List</h1>
+      <div className="grid grid-cols-3 gap-4">
+        {countries.map((item) => {
+          return (
+            <Card
+              key={item.ccn3}
+              name={item.name.common}
+              ccn3={item.ccn3}
+              flag={item.flag}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 export default Home;

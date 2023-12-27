@@ -31,11 +31,14 @@ const Detail = () => {
   return (
     <div>
       {loading ? (
-        <div className="grid place-content-center content-center">
-          <Spinner className="h-12 w-12" color="red" />
+        <div className="flex h-screen bg-inherit">
+          <div className="m-auto">
+            <Spinner className="h-12 w-12" color="blue" />
+          </div>
         </div>
       ) : (
         <div>
+          <h1 className="text-5xl">Country Detail</h1>
           <div className="grid place-content-center">
             <img
               src={country.flags?.png}
@@ -45,9 +48,34 @@ const Detail = () => {
           </div>
           <div className="grid grid-cols-3 gap-2 max-w-2xl mt-2">
             {/* <h1>this is detail {ccn3}</h1> */}
-            <div className="w-4">Nama</div>
-            <div className="w-2">:</div>
+            <div className="">Name</div>
+            <div className="">:</div>
             <div>{country.name?.common}</div>
+
+            <div className="">Region</div>
+            <div className="">:</div>
+            <div>{country.region}</div>
+
+            <div className="">Google Maps</div>
+            <div className="">:</div>
+            <div>
+              <a
+                href={country.maps.googleMaps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline text-blue-500"
+              >
+                {country.maps.googleMaps}
+              </a>
+            </div>
+
+            <div className="">Population</div>
+            <div className="">:</div>
+            <div>{country.population}</div>
+
+            <div className="">Area</div>
+            <div className="">:</div>
+            <div>{country.area}</div>
           </div>
           <div className="mt-6">
             <span
