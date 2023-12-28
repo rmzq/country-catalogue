@@ -21,7 +21,7 @@ const Detail = () => {
       .finally(() => {
         setLoading(false);
       });
-  });
+  }, []);
 
   const handleHome = (e: any) => {
     e.preventDefault();
