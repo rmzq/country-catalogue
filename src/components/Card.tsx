@@ -16,7 +16,7 @@ const Card: FunctionComponent<CardProps> = ({ name, flag, ccn3 }) => {
   };
   return (
     <div
-      className="bg-white p-2 rounded-md hover:cursor-pointer"
+      className="bg-white p-2 rounded-md hover:cursor-pointer hover:shadow-xl"
       onClick={handleClick}
     >
       {name} {flag}
