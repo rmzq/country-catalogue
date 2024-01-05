@@ -30,15 +30,15 @@ const Detail = () => {
 
   return (
     <div>
+      <h1 className="text-5xl">Country Detail</h1>
       {loading ? (
         <div className="flex h-screen bg-inherit">
           <div className="m-auto">
-            <Spinner className="h-12 w-12" color="blue" />
+            <span className="loading loading-spinner loading-lg"></span>
           </div>
         </div>
       ) : (
         <div>
-          <h1 className="text-5xl">Country Detail</h1>
           <div className="grid place-content-center">
             <img
               src={country.flags?.png}

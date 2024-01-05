@@ -5,8 +5,14 @@ type CardProps = {
   name: string;
   flag: string;
   ccn3: string;
+  officialName: string;
 };
-const Card: FunctionComponent<CardProps> = ({ name, flag, ccn3 }) => {
+const Card: FunctionComponent<CardProps> = ({
+  name,
+  flag,
+  ccn3,
+  officialName,
+}) => {
   //   const { name } = CardProps;
   const navigate = useNavigate();
   const handleClick = (e: any) => {
@@ -19,7 +25,7 @@ const Card: FunctionComponent<CardProps> = ({ name, flag, ccn3 }) => {
       className="bg-white p-2 rounded-md hover:cursor-pointer hover:shadow-xl"
       onClick={handleClick}
     >
-      {name} {flag}
+      {name} ({officialName}) {flag}
     </div>
   );
 };
