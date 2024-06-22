@@ -1,15 +1,13 @@
-FROM node:20.10.0 AS build
+FROM node:20.10.0-alpine3.19 AS build
 
 WORKDIR /app
-COPY package*.json ./
-COPY yarn.lock ./
 
-RUN yarn install
 COPY . .
+RUN yarn install
 
 RUN yarn build
 
-FROM nginx:1.25.3
+FROM nginx:1.25.5-alpine3.19-slim
 
 COPY --from=build /app/build /usr/share/nginx/html
 
