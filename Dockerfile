@@ -9,7 +9,9 @@ RUN yarn build
 
 FROM nginx:1.25.5-alpine3.19-slim
 
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
+
+COPY nginx/ etc/nginx/
 
 EXPOSE 80
 
